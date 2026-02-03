@@ -1,0 +1,155 @@
+
+# SENSITIVE FILES - DO NOT COMMIT
+
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.*.local
+/frontend/.env.development
+/frontend/.env.production
+/frontend/.env.test
+/backend/.env
+/backend/.env.local
+/backend/.env.*.local
+/backend/.env.development
+/backend/.env.production
+/backend/.env.test
+*.pem
+*.key
+*.cert
+*.crt
+
+
+# DEPENDENCIES & PACKAGE MANAGERS
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+
+# BUILD & DIST DIRECTORIES
+
+dist/
+build/
+out/
+dist-ssr/
+*.local
+
+
+# VITE BUILD ARTIFACTS
+
+.vite/
+.vitignore
+
+
+# MONGODB & DATABASE
+
+*.mongodb
+mongodb.log
+
+
+# IDE & EDITOR CONFIGURATIONS
+
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vs/
+.vs_code/
+*.iml
+.gradle/
+.ruby-version
+
+
+# OS-SPECIFIC FILES
+
+Thumbs.db
+.AppleDouble
+.LSOverride
+.TemporaryItems
+.VolumeIcon.icns
+ehthumbs.db
+Desktop.ini
+
+
+# LOGS & RUNTIME
+
+logs/
+*.log
+npm-debug.log*
+lerna-debug.log*
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+
+# TEST & COVERAGE
+
+coverage/
+.nyc_output/
+.coverage
+htmlcov/
+
+
+# DEVELOPMENT & BACKUP FILES
+
+*.bak
+*.backup
+*~
+*.swp
+*.swo
+.tmp/
+tmp/
+
+
+# DEPENDENCIES CACHE
+
+.cache/
+.parcel-cache/
+.eslintcache
+.node_repl_history
+.pytest_cache/
+.turbo/
+
+
+# EDITOR TEMPORARY FILES
+
+*.swp
+*.swo
+*~
+.~*
+
+
+# IDE WORKSPACE FILES
+
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+.idea/workspace.xml
+.idea/tasks.xml
+
+
+# MISCELLANEOUS
+
+.DS_Store
+.AppleDouble
+.LSOverride
+node_modules/
+ARCHITECTURE.md
+DEPLOYMENT.md
+DOCS_INDEX.md
+FILE_MANIFEST.md
+PROJECT_SUMMARY.md
+QUICKSTART.md
+VERIFICATION_CHECKLIST.md
