@@ -8,3 +8,5 @@ export default defineConfig({
     open: true,
   },
 });
+export const BASE_URL = "https://splitmintbackend.onrender.com";
+
