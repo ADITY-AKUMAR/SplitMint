@@ -35,9 +35,6 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "Backend is running" });
 });
 
-/* =======================
-   FRONTEND SERVE (VERY IMPORTANT)
-======================= */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -49,9 +46,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-/* =======================
-   ERROR HANDLING (LAST)
-======================= */
+
 app.use(errorHandler);
 
 export default app;
