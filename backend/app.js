@@ -1,5 +1,8 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
+
 import authRoutes from "./routes/authRoutes.js";
 import groupRoutes from "./routes/groupRoutes.js";
 import expenseRoutes from "./routes/expenseRoutes.js";
@@ -8,7 +11,9 @@ import { errorHandler } from "./middleware/auth.js";
 
 const app = express();
 
-// Middleware
+/* =======================
+   MIDDLEWARES
+======================= */
 app.use(
   cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173",
@@ -17,7 +22,9 @@ app.use(
 );
 app.use(express.json());
 
-// Routes
+/* =======================
+   API ROUTES
+======================= */
 app.use("/api/auth", authRoutes);
 app.use("/api/groups", groupRoutes);
 app.use("/api/expenses", expenseRoutes);
@@ -28,12 +35,23 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "Backend is running" });
 });
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ message: "Route not found" });
+/* =======================
+   FRONTEND SERVE (VERY IMPORTANT)
+======================= */
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// React build
+app.use(express.static(path.join(__dirname, "dist")));
+
+// React Router fallback
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-// Error handler
+/* =======================
+   ERROR HANDLING (LAST)
+======================= */
 app.use(errorHandler);
 
 export default app;
