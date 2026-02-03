@@ -74,6 +74,7 @@
 import "dotenv/config";
 import app from "./app.js";
 import { connectDB } from "./config/database.js";
+import express from "express";
 
 // 🔽 ADD THESE IMPORTS
 import path from "path";
