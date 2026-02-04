@@ -12,16 +12,8 @@ import { errorHandler } from "./middleware/auth.js";
 const app = express();
 
 /* =======================
-   MIDDLEWARES
+   MIDDLEWARES (FIXED)
 ======================= */
-// app.use(
-//   cors({
-//     origin: process.env.CLIENT_URL || "http://localhost:5173",
-//     credentials: true,
-//   }),
-// );
-// app.use(express.json());
-
 app.use(
   cors({
     origin: [
@@ -32,7 +24,9 @@ app.use(
   })
 );
 
-
+// 🔥 VERY IMPORTANT (BOTH REQUIRED)
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 /* =======================
    API ROUTES
@@ -47,17 +41,17 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "Backend is running" });
 });
 
+/* =======================
+   FRONTEND SERVE
+======================= */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// React build
 app.use(express.static(path.join(__dirname, "dist")));
 
-// React Router fallback
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
-
 
 app.use(errorHandler);
 
