@@ -6,7 +6,8 @@ import Balance from "../models/Balance.js";
 
 export const createGroup = async (req, res, next) => {
   try {
-    const { name, description } = req.body;
+    // Safely read body so deployment / parsing issues don't crash
+    const { name, description } = req.body || {};
 
     if (!name) {
       return res.status(400).json({ message: "Group name is required" });

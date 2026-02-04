@@ -37,6 +37,9 @@ export const authService = {
 // ---------- GROUPS ----------
 export const groupService = {
   create: (data) => API.post("/groups", data),
+  // Backwards-compatible helper: some code may still call createGroup(name, description)
+  createGroup: (name, description) =>
+    API.post("/groups", { name, description }),
   getGroups: () => API.get("/groups"),
   getGroup: (id) => API.get(`/groups/${id}`),
   updateGroup: (id, name, description) =>
