@@ -31,20 +31,29 @@
 //   get: (groupId) => API.get(`/balances/${groupId}`),
 // };
 // frontend/src/services/api.js
+// frontend/src/services/api.js
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "/api", // 🔥 SAME DOMAIN (Render pe bhi, local pe bhi)
+  baseURL: "/api",
   headers: {
-    "Content-Type": "application/json",
+    "Content-Type": "application/json", // 🔥 THIS WAS MISSING
   },
+  withCredentials: true,
 });
 
 // AUTH
 export const authService = {
   register: (name, email, password) =>
-    API.post("/auth/register", { name, email, password }),
+    API.post("/auth/register", {
+      name,
+      email,
+      password,
+    }),
 
   login: (email, password) =>
-    API.post("/auth/login", { email, password }),
+    API.post("/auth/login", {
+      email,
+      password,
+    }),
 };
