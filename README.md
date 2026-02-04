@@ -5,14 +5,42 @@ A production-ready Splitwise-like web application for managing shared expenses a
 ## 🎯 Features
 
 - **User Authentication**: Email/password registration and login with JWT-based auth
+- 
+<img width="1892" height="915" alt="image" src="https://github.com/user-attachments/assets/50cfc11f-d53e-4ac2-bfd8-1dbad3b6362c" />
+
 - **Group Management**: Create groups with multiple participants (max 4 including owner)
+- 
+<img width="1896" height="925" alt="image" src="https://github.com/user-attachments/assets/c08faf35-02a7-45a8-95f3-d82d4213e180" />
+<img width="1890" height="930" alt="image" src="https://github.com/user-attachments/assets/37bfcdd8-43bd-4c8c-8a9f-a75e53c9e56b" />
+<img width="1887" height="921" alt="image" src="https://github.com/user-attachments/assets/cd7292d9-d0e2-4ba0-9399-7592c5cb3413" />
+
+Add Group Member
+<img width="1897" height="902" alt="image" src="https://github.com/user-attachments/assets/8c48d81d-845a-4b7a-a30c-99040875fe62" />
+
 - **Expense Tracking**: Record and categorize shared expenses with multiple split modes
+
+<img width="1916" height="924" alt="image" src="https://github.com/user-attachments/assets/ceacffcb-501c-4899-93e7-2e918a78ac5d" />
+
+- 
 - **Smart Balance Engine**: Automatically calculate who owes whom with minimal settlements
+
+- <img width="1893" height="926" alt="image" src="https://github.com/user-attachments/assets/83b8baa9-87f7-4373-b9dd-132f88bb1a89" />
+
 - **Split Modes**: Equal, custom amounts, or percentage-based splits
+- 
+<img width="1907" height="907" alt="image" src="https://github.com/user-attachments/assets/1a350910-ce21-4787-9ddb-41b0cf2db379" />
+
 - **Transaction History**: Track all expenses with date, payer, amount, and split details
+- 
+<img width="1805" height="638" alt="image" src="https://github.com/user-attachments/assets/5ecd9312-2b90-4d46-a115-9e210fe7e208" />
+
 - **Balance Summary**: Visual dashboard showing what you owe and are owed
+- <img width="1875" height="916" alt="image" src="https://github.com/user-attachments/assets/64a72719-f20e-4be9-8971-e572d6054e1f" />
+
 - **Responsive UI**: Clean, modern interface built with React and Tailwind CSS
 - **Search & Filter**: Find expenses by text, participant, date range, or amount
+<img width="1898" height="913" alt="image" src="https://github.com/user-attachments/assets/163e0814-2942-4d53-bb5d-2d8542cd8136" />
+
 
 ## 🏗️ Technology Stack
 
