@@ -21,10 +21,10 @@ export const CreateGroupPage = () => {
     setError("");
 
     try {
-      const response = await groupService.createGroup(
-        formData.name,
-        formData.description,
-      );
+      const response = await groupService.create({
+        name: formData.name,
+        description: formData.description,
+      });
       navigate(`/groups/${response.data.group._id}`);
     } catch (err) {
       setError(err.response?.data?.message || "Failed to create group");
