@@ -39,7 +39,8 @@ Add Group Member
 
 - **Responsive UI**: Clean, modern interface built with React and Tailwind CSS
 - **Search & Filter**: Find expenses by text, participant, date range, or amount
-<img width="1898" height="913" alt="image" src="https://github.com/user-attachments/assets/163e0814-2942-4d53-bb5d-2d8542cd8136" />
+<img width="1614" height="441" alt="image" src="https://github.com/user-attachments/assets/305c2bae-ebdb-4f8d-9de7-cba876a428fb" />
+
 
 
 ## 🏗️ Technology Stack
