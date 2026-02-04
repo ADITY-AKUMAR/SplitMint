@@ -12,7 +12,7 @@ import { errorHandler } from "./middleware/auth.js";
 const app = express();
 
 /* =======================
-   MIDDLEWARES (FIXED)
+   MIDDLEWARES
 ======================= */
 app.use(
   cors({
@@ -24,8 +24,12 @@ app.use(
   })
 );
 
-// 🔥 VERY IMPORTANT (BOTH REQUIRED)
-app.use(express.json());
+// 🔥 FIX: PARSE BOTH application/json & text/plain
+app.use(
+  express.json({
+    type: ["application/json", "text/plain"],
+  })
+);
 app.use(express.urlencoded({ extended: true }));
 
 /* =======================
@@ -42,7 +46,7 @@ app.get("/api/health", (req, res) => {
 });
 
 /* =======================
-   FRONTEND SERVE
+   FRONTEND SERVE (REACT)
 ======================= */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -53,6 +57,9 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
+/* =======================
+   ERROR HANDLER
+======================= */
 app.use(errorHandler);
 
 export default app;

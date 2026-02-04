@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 export const register = async (req, res, next) => {
   try {
     const { name, email, password } = req.body || {};
+
     if (!name || !email || !password) {
       return res
         .status(400)
@@ -23,9 +24,7 @@ export const register = async (req, res, next) => {
     const token = jwt.sign(
       { id: user._id, email: user.email },
       process.env.JWT_SECRET,
-      {
-        expiresIn: "7d",
-      },
+      { expiresIn: "7d" }
     );
 
     res.status(201).json({
@@ -40,7 +39,7 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
   try {
-    const { name, email, password } = req.body || {};
+    const { email, password } = req.body || {};
 
     if (!email || !password) {
       return res
@@ -61,9 +60,7 @@ export const login = async (req, res, next) => {
     const token = jwt.sign(
       { id: user._id, email: user.email },
       process.env.JWT_SECRET,
-      {
-        expiresIn: "7d",
-      },
+      { expiresIn: "7d" }
     );
 
     res.json({
